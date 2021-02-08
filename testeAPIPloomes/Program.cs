@@ -28,7 +28,6 @@ namespace testeAPIPloomes
             JObject novaTarefa = new JObject();
             novaTarefa.Add("Title", "Tarefa 1000");
             novaTarefa.Add("Description", "Tarefa da Nova Negocição 100");
-            //novaTarefa.Add("ContactId", cliente[0]["Id"]);
             novaTarefa.Add("DealId", negociacao[0]["Id"]);
 
             JArray tarefa = RequestHandler.MakePloomesRequest($"Tasks", RestSharp.Method.POST, novaTarefa);
@@ -47,18 +46,6 @@ namespace testeAPIPloomes
             desHistoricoCliente.Add("Content", "Negócio Fechado!");
 
             JArray historicoCliente = RequestHandler.MakePloomesRequest($"InteractionRecords", RestSharp.Method.POST, desHistoricoCliente);
-
-            Console.WriteLine(tarefaTerminada.ToString() + "\n\n");
-            Console.WriteLine(negociacao.ToString());
-
-            /*
-            Console.WriteLine(historicoCliente.ToString() + "\n\n");
-            Console.WriteLine(cliente.ToString());
-            Console.WriteLine(tarefa.ToString() + "\n\n");
-            Console.WriteLine(negociacaoPatch.ToString() + "\n\n");
-            Console.WriteLine(negociacaoGanha.ToString() + "\n\n");
-            */
-          
         }
     }
 }
